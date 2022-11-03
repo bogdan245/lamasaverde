@@ -14,8 +14,14 @@
 </head>
 <body>
 <h1>{{ post.title }}</h1>
-<small>By: {{ post.author.first_name }}</small><br/>
+By: {{ post.author.first_name }} -
 
+    <a href="{% url 'edit-post' post.pk %}" class="btn btn-dark btn-sm">Edit</a>
+    <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger btn-sm">Delete</a><br/>
+
+
+<hr>
+<br/>
 {{ post.body }}
 <br><br><br>
 
