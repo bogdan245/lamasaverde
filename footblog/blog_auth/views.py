@@ -4,7 +4,7 @@ from django.contrib.auth.forms import forms
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate,get_user_model,login,logout
 from .form import *
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 # class UserRegister(generic.CreateView):
 #     form_class = UserCreationForm
