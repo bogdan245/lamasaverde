@@ -1,0 +1,3 @@
+   <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'signup' %}">Sign-up | Login</a>-->
+<!--            </li>-->

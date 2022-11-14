@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.urls import path
 # from .views import UserRegister
-from .views import signUp
+from .views import CustomLoginView
 
 
 
 urlpatterns = [
-    path('signup/', signUp.as_view(), name='signup')
+    path('member/', CustomLoginView.as_view(), name='login')
 
 ]
