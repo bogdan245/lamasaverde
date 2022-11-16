@@ -2,29 +2,36 @@
 
 {% load static %}
 
-
+<a href="{% url 'home' %}" class="btn btn-secondary">GO BACK</a>
 <link rel="shortcut icon" type="image/png" href="{% static 'soccer.png' %}"/>
 <h2></h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="" method="POST">
+		<form action="." method="POST">
 			{% csrf_token %}
 
 			<h1>Create Account</h1>
-			<input type="text" value="{{ form.username }}" placeholder="Username">
-			<input type="password" value="{{ form.password }}" placeholder="Password">
-			<button type="submit">Sign Up</button>
+
+			{{form.username}}
+			{{form.password}}
+<!--			-->
+<!--			<label class="control-label" for="User"></label>-->
+<!--				<input type="text" id="User" placeholder="Username">-->
+<!--			<label class="control-label" for="password"></label>-->
+<!--				<input type="password" id="password">-->
+			<button type="submit" value="signup">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form method="POST">
 			<h1>Sign in</h1>
 			{% csrf_token %}
-			<label class="control-label" for="username">Username</label>
+
+			<label class="control-label" for="username"></label>
 
                 <input type="text" id="username" name="username"  placeholder="Username">
 
-			<label class="control-label" for="password">Password</label>
+			<label class="control-label" for="password"></label>
 
                 <input type="password" name="password" id="password" placeholder="Password">
 
