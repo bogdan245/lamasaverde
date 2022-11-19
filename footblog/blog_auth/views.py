@@ -1,11 +1,11 @@
-from .form import UserCreationForm
+from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.contrib.auth import authenticate,get_user_model,login,logout
 from .form import *
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView
 
 # class UserRegister(generic.CreateView):
 #     form_class = UserCreationForm
@@ -27,15 +27,22 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('home')
 
-def signup(request):
-    form = SignUpForm(request.POST)
-    if form.is_valid:
-        pass
-    else:
-        form = SignUpForm
+class signup(generic.CreateView):
+    #form = SignUpForm
+    template_name = 'registration/login.html'
+    form_class = SignUpForm
+    redirect_authenticated_user = True
+    fields = ['username', 'password1', 'password2']
+    success_url = reverse_lazy('login')
+    def signUp(request):
+        signup_form = SignUpForm
+        if signup_form.is_valid:
+            pass
+        else:
+            signup_form = SignUpForm()
+        return render(request, "signup")
 
-    context = {"form":form}
-    return render(request, "registration/login.html", context)
+
 
 # class RegisterPage(FormView):
 #     template_name = 'registration/login.html'
@@ -50,3 +57,4 @@ def signup(request):
 #
 #     def get_success_url(self):
 #         return reverse_lazy('home')
+

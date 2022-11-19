@@ -7,23 +7,21 @@
 <h2></h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="." method="POST">
+		<form action="{% url 'signup' %}" method="POST">
 			{% csrf_token %}
 
 			<h1>Create Account</h1>
 
 			{{form.username}}
-			{{form.password}}
-<!--			-->
-<!--			<label class="control-label" for="User"></label>-->
-<!--				<input type="text" id="User" placeholder="Username">-->
-<!--			<label class="control-label" for="password"></label>-->
-<!--				<input type="password" id="password">-->
-			<button type="submit" value="signup">Sign Up</button>
+
+
+
+
+			<button type="submit" value="signup" name="signup">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form method="POST">
+		<form action="" method="POST">
 			<h1>Sign in</h1>
 			{% csrf_token %}
 
