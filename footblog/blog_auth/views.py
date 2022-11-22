@@ -19,28 +19,42 @@ from django.views.generic.edit import FormView, CreateView
 #     success_url = reverse_lazy('home')
 
 
-class CustomLoginView(LoginView):
+class LoginRegistrationView(LoginView, SignUpForm):
+    login_form = LoginView
     template_name = 'registration/login.html'
-    fields = ['username', 'password']
     redirect_authenticated_user = True
-
+    # def login(self, request):
+    #     if 'signin' in request.POST:
+    #         form_class = self.login_form(request.POST)
+    #         form = self.get_form_class()
     def get_success_url(self):
         return reverse_lazy('home')
 
-class signup(generic.CreateView):
-    #form = SignUpForm
-    template_name = 'registration/login.html'
-    form_class = SignUpForm
-    redirect_authenticated_user = True
-    fields = ['username', 'password1', 'password2']
-    success_url = reverse_lazy('login')
-    def signUp(request):
-        signup_form = SignUpForm
-        if signup_form.is_valid:
-            pass
-        else:
-            signup_form = SignUpForm()
-        return render(request, "signup")
+# class signup(generic.CreateView):
+#     form_class = SignUpForm
+#     success_url = reverse_lazy('home')
+#     template_name = 'registration/signup.html'
+#
+#     def post(self, request, *args, **kwargs):
+#         if 'signup' in request.POST:
+#             form_class = self.get_form_class()
+#             form = self.get_form(form_class)
+#             if form.is_valid():
+#                 form.save()
+#             return self.form_valid(form)
+
+
+
+
+
+
+    # def signUp(request):
+    #     signup_form = SignUpForm
+    #     if signup_form.is_valid:
+    #         pass
+    #     else:
+    #         signup_form = SignUpForm()
+    #     return render(request, "signup")
 
 
 

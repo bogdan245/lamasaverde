@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.urls import path
 # from .views import UserRegister
-from .views import CustomLoginView, signup
+from .views import LoginRegistrationView
 from django.contrib.auth.views import LogoutView
 
 
 
 urlpatterns = [
-    path('member/', CustomLoginView.as_view(), name='login'),
-    path('member/', signup.as_view(), name='signup'),
+    path('member/', LoginRegistrationView.as_view(), name='login'),
+    path('member/', LoginRegistrationView.as_view(), name='signup'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout')
 
 ]
