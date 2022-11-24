@@ -202,6 +202,16 @@ iframe {
   background: linear-gradient(top, #106600, #0f9b0f);
 }
 
+/*---------------
+/* LOGO*/
+
+.logo {
+position:relative;
+height:95%;
+width:95%;
+
+
+}
 
 /*------------------------------------------------------------------
 [ Form ]*/

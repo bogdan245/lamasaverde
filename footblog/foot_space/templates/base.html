@@ -65,11 +65,6 @@ color:black;
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse nav-content order-2" id="navbarSupportedContent">
-          <ul class="nav navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
-            </li>
-          </ul>
         <ul class="nav navbar-nav">
             <li class="nav-item">
                 {% if request.user.is_authenticated %}
@@ -77,13 +72,17 @@ color:black;
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                </li>
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
+
                 {% endif %}
             </li>
-          </ul>
+        </ul>
           <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="" data-bs-target="#myModal" data-bs-toggle="modal">About</a>
