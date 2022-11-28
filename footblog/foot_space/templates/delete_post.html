@@ -3,7 +3,7 @@
 {% block title %} Edit post {% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <h1>Delete post</h1>
 <br/>
 <h3>Delete: {{ post.title }}</h3>
@@ -16,6 +16,11 @@
     </form>
 </div>
 
+{% else %}
+
+<h1>You are not allowed here!</h1>
+
+{% endif %}
 
 
 {% endblock %}

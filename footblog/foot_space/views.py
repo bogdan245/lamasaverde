@@ -24,7 +24,7 @@ class AddPost(CreateView):
     form_class = PostForm
     template_name = 'add_post.html'
     # fields = '__all__'
-    # fields = ('title', 'title_tag', 'body')
+    #fields = ('title', 'title_tag', 'body')
 
 
 class EditPost(UpdateView):
