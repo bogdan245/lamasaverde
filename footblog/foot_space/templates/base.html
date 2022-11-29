@@ -91,13 +91,22 @@ color: #142d4c;
                 </li>
 
                 {% endif %}
-            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+                </a>
+                {% if cat_menu %}
+            <ul class="dropdown-menu">
+                {% for item in cat_menu %}
+                <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }} </a></li>
+
+                {% endfor %}
+                {% endif %}
+            </ul>
+
         </ul>
-          <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="" data-bs-target="#myModal" data-bs-toggle="modal">About</a>
-                </li>
-          </ul>
+
+
     </div>
 </nav>
     <div class = "container">
