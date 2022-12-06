@@ -3,5 +3,6 @@ footblog/footblog/settings.py
 settings.py
 manage.py
 static/
+footblog/footblog/wsgi.py
 footblog/footblog/settings.py
 footblog/db.sqlite3
