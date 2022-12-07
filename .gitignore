@@ -6,3 +6,5 @@ static/
 footblog/footblog/wsgi.py
 footblog/footblog/settings.py
 footblog/db.sqlite3
+footblog/footblog/settings.py
+footblog/footblog/__pycache__/settings.cpython-311.pyc
