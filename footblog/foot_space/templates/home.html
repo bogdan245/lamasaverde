@@ -2,10 +2,10 @@
 
 {% block content %}
 <style>
-    a {
+    a{
         color: inherit;
         text-decoration: none;
-        font-weight: bold;
+
 
     }
     .btn
@@ -19,25 +19,82 @@
     .li_spaced{
   margin: 10px 0;
     }
+    ul {
+    list-style:none;
+
+    }
+
+
+   .grid-wrapper {
+     display:grid;
+     grid-template-columns: repeat(3, 1fr);
+     padding: 10px;
+     align-items: flex-start;
+     grid-row-gap:15px;
+     grid-column-gap:10px;
+
+
+    }
+
+    .grid-item {
+     display: grid;
+     background:#ececec;
+     border-radius:10px;
+     box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
+    }
+
+    .post-title {
+        color:black;
+        font-size:18px;
+        font-weight:bold;
+    }
+    .post-body{
+        color:black;
+        font-size:15px;
+        font-weight:normal;
+    }
 
 </style>
 <html>
 
 
-<ul>
-{% for post in object_list %}
-    <li class ="li_spaced"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> -
 
-        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -
-        {{ post.author}} - {{ post.post_date }}
-        {% if request.user.is_authenticated %}
-         | <a href="{% url 'edit-post' post.pk %}" class="btn btn-dark btn-sm">Edit</a>
-         | <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
-        {% endif %}
-    </li>
-{% endfor %}
 
-</ul>
+<div class="grid-wrapper">
+            {% for post in object_list %}
+            <a href="{% url 'article-detail' post.pk %}">
+
+                <div class="grid-item">
+
+                        <div class="post-title">{{ post.title }}</div>
+                        <div class="post-body">
+                            {{ post.body|safe|truncatewords:15 }}<br/><br/>
+
+                        </div>
+                        <div class="post-metadata">
+                            {{ post.category }} •
+                            {{ post.author }}<br/>
+                            {{ post.post_date }}
+                        </div>
+
+                </div>
+
+            </a>
+
+
+
+
+            {% endfor %}
+
+
+
+</div>
+
+
 </html>
+<script>$(document).ready(function(){
 
+});
+</script>
 {% endblock %}
