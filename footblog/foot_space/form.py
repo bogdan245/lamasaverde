@@ -10,7 +10,7 @@ for cat in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'author', 'category', 'body')
+        fields = ('title', 'title_tag', 'author', 'category', 'body', 'post_image')
 
 
         widgets = {

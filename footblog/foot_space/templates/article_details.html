@@ -4,7 +4,16 @@
 
 {% block content %}
 
+<style>
 
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+</style>
 
 
 <html lang="en">
@@ -22,10 +31,13 @@ By: {{ post.author.first_name }} - {{ post.post_date }}
 
 
 
-
     {% endif %}
 <hr>
 <br/>
+    {% if post.post_image %}
+    <img src="{{ post.post_image.url }}"  class="center">
+    {% endif %}
+<br><br>
 {{ post.body|safe }}
 <br><br><br>
 

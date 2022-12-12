@@ -1,84 +1,49 @@
+<!DOCTYPE html>
+
 {% extends 'base.html' %}
 
 {% block content %}
-<style>
-    a{
-        color: inherit;
-        text-decoration: none;
 
 
-    }
-    .btn
-    {
-        padding: 5px 5px;
-        border: 0 none;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    .li_spaced{
-  margin: 10px 0;
-    }
-    ul {
-    list-style:none;
-
-    }
 
 
-   .grid-wrapper {
-     display:grid;
-     grid-template-columns: repeat(3, 1fr);
-     padding: 10px;
-     align-items: flex-start;
-     grid-row-gap:15px;
-     grid-column-gap:10px;
 
+{% load static %}
 
-    }
-
-    .grid-item {
-     display: grid;
-     background:#ececec;
-     border-radius:10px;
-     box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
-
-    }
-
-    .post-title {
-        color:black;
-        font-size:18px;
-        font-weight:bold;
-    }
-    .post-body{
-        color:black;
-        font-size:15px;
-        font-weight:normal;
-    }
-
-</style>
 <html>
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+</head>
 
-
-
-<div class="grid-wrapper">
+<br/>
+<div class="cards">
             {% for post in object_list %}
             <a href="{% url 'article-detail' post.pk %}">
 
-                <div class="grid-item">
+                <div class="card">
 
-                        <div class="post-title">{{ post.title }}</div>
-                        <div class="post-body">
-                            {{ post.body|safe|truncatewords:15 }}<br/><br/>
+                        {% if post.post_image %}
+                        <img src="{{ post.post_image.url }}" class="card_image">
+                        {% endif %}
+                        <div class="card__content">
 
-                        </div>
+
+                            {{ post.title }}
+
+                            {{ post.body|safe|truncatewords:15 }}
+
+
                         <div class="post-metadata">
                             {{ post.category }} •
                             {{ post.author }}<br/>
                             {{ post.post_date }}
                         </div>
+                        </div>
+                        </div>
 
-                </div>
+
 
             </a>
 

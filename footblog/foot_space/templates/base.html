@@ -1,16 +1,7 @@
 <style>
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-<!--.navbar-brand-->
-<!--{-->
-<!--    position: absolute;-->
-<!--    width: 100%;-->
-<!--    left: 0;-->
-<!--    top: 0;-->
-<!--    text-align: center;-->
-<!--    margin: auto;-->
-<!--    padding:0;-->
-<!--}-->
+
 
 
 
@@ -39,17 +30,21 @@ background: #9fd3c7;
 
 }
 
+
 .nav.navbar-nav li a{
 color: #142d4c;
 }
 
+
+
 .navbar-nav.ms-auto li a{
 color: #142d4c;
 }
+
 {% load static %}
 
 {% block extrahead %}
-<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'</script>
+
 {{ block.super }}
 {% endblock %}
 
@@ -58,6 +53,7 @@ a{
 }
 
 </style>
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'</script>
 <!doctype html>
 <html lang="en">
   <head>
@@ -67,9 +63,9 @@ a{
     <link rel="shortcut icon" type="image/png" href="{% static 'soccer.png' %}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
-<body>
+<body class="m-0 p-0">
 
-
+<div class="container">
 <nav class="navbar navbar-expand-md  ">
 
     <a class="navbar-brand abs" href="{% url 'home' %}"> La masa verde!</a>
@@ -95,7 +91,9 @@ a{
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
 
+
                 {% endif %}
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categories
@@ -105,15 +103,24 @@ a{
                 {% for item in cat_menu %}
                 <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }} </a></li>
 
+                </li>
                 {% endfor %}
                 {% endif %}
+
             </ul>
 
         </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
+            <li class="nav-item about">
+                    <a class="nav-link" href="">About</a>
+            </li>
+
+        </ul>
 
     </div>
 </nav>
+</div>
     <div class = "container">
         {% block content %}
 
@@ -121,24 +128,7 @@ a{
         {% endblock %}
     </div>
 
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="myModalLabel">The Team</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><span aria-hidden="true"></span></button>
-            </div>
 
-            <div class="modal-body">
-                <p>Dev. by niste baieti</p>
-            </div>
-<!--            <div class="modal-footer">-->
-<!--                <button class="btn" data-bs-dismiss="modal" aria-hidden="true">Close</button>-->
-<!--                <button class="btn btn-primary">Save changes</button>-->
-<!--            </div>-->
-        </div>
-    </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
