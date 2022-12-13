@@ -30,9 +30,12 @@
                         <div class="card__content">
 
 
-                            {{ post.title }}
+                            <div class="card__title">{{ post.title }}</div>
 
-                            {{ post.body|safe|truncatewords:15 }}
+                            {{ post.body|safe|truncatewords:8 }}
+
+
+
 
 
                         <div class="post-metadata">

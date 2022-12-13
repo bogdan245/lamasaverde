@@ -1,6 +1,49 @@
+a{
+color:inherit;
+text-decoration: none;
+
+
+}
+
+a:hover {
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+ul {
+    list-style:none;
+
+}
+
+
 .cards{
+    display:grid;
     margin: 0 auto;
     max-width: 1000px;
-    display:grid;
+
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-family: sans-serif;
+    overflow:hidden;
+}
+
+.card{
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.card_image{
+width: 100%;
+height: 25%;
+display:block;
+}
+
+
+.card__content{
+line-height:1.5;
+font-size:0.9em;
+padding:15px;
+background:#fafafa;
+
 }
