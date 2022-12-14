@@ -114,3 +114,5 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 
+footblog/footblog/__pycache__/settings.cpython-311.pyc
+*.pyc
