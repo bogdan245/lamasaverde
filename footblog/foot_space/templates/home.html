@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-
 {% extends 'base.html' %}
-
 {% block content %}
-
-
-
-
-
 {% load static %}
 
 <html>
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+
 </head>
 
 <br/>
+
+<div class="boss_container">
+<div class="carousel">
+    {% for post in object_list|slice:"0:4" %}
+
+
+
+                    <div class="item {% if forloop.first %} main {% endif %}">
+                        <a href="{% url 'article-detail' post.pk %}">
+                        {% if post.post_image %}
+                            <div class="img_container">
+                                 <img src="{{ post.post_image.url }}" class="latest_post">
+                        {% endif %}
+
+
+                             </div>
+                            <div class="text">{{ post.title }}</div>
+                        </a>
+                    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="navigation">
+    <div class="prev nav-btn"><</div>
+    <div class="next nav-btn">></div>
+</div>
+</div>
+<br/>
+
 <div class="cards">
             {% for post in object_list %}
+
             <a href="{% url 'article-detail' post.pk %}">
 
                 <div class="card">
@@ -61,8 +89,15 @@
 
 
 </html>
-<script>$(document).ready(function(){
+<script>
+
+
+$(document).ready(function(){
 
 });
 </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="{% static 'js/slider.js' %}"
+
 {% endblock %}

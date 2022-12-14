@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import date, datetime
 from ckeditor.fields import RichTextField
+import datetime
 
 
 
@@ -33,3 +34,7 @@ class Post(models.Model):
         #return reverse('article-detail', args=(str(self.id)))
         return reverse('home')
 
+    def latest_posts(self):
+        reference = datetime.date.today() - datetime.timedelta(days=7)
+        tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+        return tomorrow > self.post_date > reference
