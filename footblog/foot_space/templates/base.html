@@ -25,8 +25,9 @@
 
 .navbar
 {
-background: #9fd3c7;
-
+height:80px;
+background: #47e4bb;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
 }
 
@@ -35,7 +36,12 @@ background: #9fd3c7;
 color: #142d4c;
 }
 
+.logo{
+position:relative;
+max-width:90px;
+max-height:90px;
 
+}
 
 .navbar-nav.ms-auto li a{
 color: #142d4c;
@@ -54,6 +60,7 @@ a{
 
 </style>
 <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'</script>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -68,7 +75,7 @@ a{
 <div class="container">
 <nav class="navbar navbar-expand-md  ">
 
-    <a class="navbar-brand abs" href="{% url 'home' %}"> La masa verde!</a>
+    <a class="navbar-brand abs" href="{% url 'home' %}"> <img class="logo" src="/static/logo.jpg "/></a>
 
 
 
@@ -99,16 +106,15 @@ a{
                 Categories
                 </a>
                 {% if cat_menu %}
-            <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
                 {% for item in cat_menu %}
-                <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }} </a></li>
+                <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
 
-                </li>
                 {% endfor %}
                 {% endif %}
 
             </ul>
-
+            </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 

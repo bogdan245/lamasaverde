@@ -116,3 +116,5 @@ GitHub.sublime-settings
 
 footblog/footblog/__pycache__/settings.cpython-311.pyc
 *.pyc
+footblog/db.sqlite3
+footblog/foot_space/templates/home_bak.html
