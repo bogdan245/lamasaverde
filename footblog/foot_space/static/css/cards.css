@@ -34,13 +34,7 @@ a:hover {
 }
 
 
-@media screen and (max-width:768px){
-.show{
-background:white !important;
-border-radius:5px;
-margin-left:0px;
 
-}
 
 
 .card{
@@ -336,5 +330,16 @@ min-width:300px;
 .navbar-nav{
 margin-left:5px!important;
 
+}
+
+@media screen and (max-width:768px){
+.show{
+background:white !important;
+border-radius:5px;
+margin-left:0px;
+transition-delay:0s;
+}
+.navbar-collapse {
+    background-color: white;
 }
 }
