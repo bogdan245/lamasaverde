@@ -3,10 +3,10 @@
 {% block title %} {{ post.title_tag }} {% endblock %}
 
 {% block content %}
-
+{% load static %}
 <style>
 
-    .center {
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -18,10 +18,12 @@
 
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
     <meta charset="UTF-8">
     <title>Article</title>
 </head>
 <body>
+<br/>
 <h1>{{ post.title }}</h1>
 By: {{ post.author.first_name }} - {{ post.post_date }}
     {% if user.is_authenticated %}
@@ -38,7 +40,9 @@ By: {{ post.author.first_name }} - {{ post.post_date }}
     <img src="{{ post.post_image.url }}"  class="center">
     {% endif %}
 <br><br>
-{{ post.body|safe }}
+<div class="article-container">
+    {{ post.body|safe }}
+</div>
 <br><br><br>
 
 <a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>
