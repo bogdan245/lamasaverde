@@ -1,0 +1,12 @@
+body{
+background: #ececec;
+
+}
+
+
+.article-container{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width:75%;
+}
