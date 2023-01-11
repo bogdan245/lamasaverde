@@ -120,3 +120,4 @@ footblog/db.sqlite3
 footblog/foot_space/templates/home_bak.html
 footblog/db.sqlite3
 *.pyc
+footblog/foot_space/__pycache__/views.cpython-311.pyc
