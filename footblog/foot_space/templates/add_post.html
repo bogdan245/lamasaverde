@@ -3,15 +3,19 @@
 {% block title %} Add a new post {% endblock %}
 
 {% block content %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
 
 <h1>Add Post</h1>
 <br/>
-<div class="form-group">
+<div class="form-group w-50">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.media }}
         {{ form.as_p }}
-            <button class="btn btn-secondary">Post</button>
+            <button class="btn back">Post</button>
     </form>
 </div>
 

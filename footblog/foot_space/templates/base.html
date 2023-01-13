@@ -30,17 +30,16 @@
 .navbar
 {
 height:80px;
-background: #47e4bb;
+background: #41b3a3;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 z-index: 9999;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
+
 }
 
 
-.nav.navbar-nav li a{
-color: #142d4c;
-}
+
 
 .logo{
 position:relative;
@@ -49,9 +48,7 @@ max-height:90px;
 
 }
 
-.navbar-nav.ms-auto li a{
-color: #142d4c;
-}
+
 
 {% load static %}
 
@@ -90,7 +87,7 @@ a{
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse nav-content order-2" id="navbarSupportedContent">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav added-margin">
             <li class="nav-item">
                 {% if request.user.is_authenticated %}
                     <a class="nav-link">{{ request.user }}</a>
@@ -98,11 +95,11 @@ a{
                     <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                    <a class="nav-link" href="{% url 'add_post' %}">Adauga Articol</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login' %}">Logare</a>
                 </li>
 
 
@@ -110,7 +107,7 @@ a{
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
+                Categorii
                 </a>
                 {% if cat_menu %}
                 <ul class="dropdown-menu">
@@ -126,7 +123,7 @@ a{
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item about">
-                    <a class="nav-link" href="">About</a>
+                    <a class="nav-link" href="">Despre</a>
             </li>
 
         </ul>

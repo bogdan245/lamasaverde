@@ -325,13 +325,6 @@ min-width:300px;
 }
 
 
-
-
-.navbar-nav{
-margin-left:5px!important;
-
-}
-
 @media screen and (max-width:768px){
 .show{
 background:white !important;
@@ -352,5 +345,14 @@ box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 .about{
 margin-left:5px;
 
+
 }
+}
+
+.added-margin{
+margin-left:5px !important;
+}
+
+.dropdown-item{
+color:#41b3a3;
 }

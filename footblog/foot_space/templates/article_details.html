@@ -20,7 +20,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
     <meta charset="UTF-8">
-    <title>Article</title>
+
 </head>
 <body>
 <br/>
@@ -36,6 +36,7 @@ By: {{ post.author.first_name }} - {{ post.post_date }}
     {% endif %}
 <hr>
 <br/>
+<div class="article-card">
     {% if post.post_image %}
     <img src="{{ post.post_image.url }}"  class="center">
     {% endif %}
@@ -45,8 +46,8 @@ By: {{ post.author.first_name }} - {{ post.post_date }}
 </div>
 <br><br><br>
 
-<a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>
-
+<a href="{% url 'home' %}" class="btn back">Inapoi</a>
+</div>
 
 </body>
 </html>
