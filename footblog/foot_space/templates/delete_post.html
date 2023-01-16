@@ -4,6 +4,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+
+{% load static %}
+<style>
+    .back{
+    margin-left:2px !important;
+    margin-bottom:0px !important;
+    }
+
+</style>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
+
 <h1>Delete post</h1>
 <br/>
 <h3>Delete: {{ post.title }}</h3>
@@ -12,7 +26,8 @@
         {% csrf_token %}
         <strong class="text-danger">Are you sure?</strong>
         <br/><br>
-        <button class="btn btn-secondary">Delete Post!</button>
+        <button class="btn btn-secondary update">Delete Post!</button>
+        <a href="{% url 'article-detail' post.pk %}" class="btn back">Inapoi</a>
     </form>
 </div>
 

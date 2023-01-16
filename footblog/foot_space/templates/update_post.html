@@ -12,10 +12,11 @@
     }
 
 </style>
-{% if user.is_authenticated %}
+
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
 </head>
+{% if user.is_authenticated %}
     <h1>Edit Post</h1>
     <br/>
     <div class="form-group">
