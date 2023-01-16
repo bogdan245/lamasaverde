@@ -3,7 +3,19 @@
 {% block title %} Edit post {% endblock %}
 
 {% block content %}
+
+{% load static %}
+<style>
+    .back{
+    margin-left:0 !important;
+    margin-bottom:0px !important;
+    }
+
+</style>
 {% if user.is_authenticated %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+</head>
     <h1>Edit Post</h1>
     <br/>
     <div class="form-group">
@@ -11,7 +23,8 @@
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}
-                <button class="btn btn-secondary">Update</button>
+                <button class="btn btn-secondary update">Update</button>
+                <a href="{% url 'article-detail' post.pk %}" class="btn back">Inapoi</a>
         </form>
     </div>
 
