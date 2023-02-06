@@ -72,6 +72,7 @@ a{
     <title>{% block title %} La masa verde! {% endblock %}</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'soccer.png' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
 <body class="m-0 p-0">
@@ -123,7 +124,8 @@ a{
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item about">
-                    <a class="nav-link" href="">Despre</a>
+                <a class="nav-link" id="openModal" href="">Despre</a>
+
             </li>
 
         </ul>
@@ -131,7 +133,19 @@ a{
     </div>
 </nav>
 </div>
+
     <div class = "container">
+        <div class="my-modal" id="modal">
+                    <div class="my-modal-header">
+                        <div class="my-modal-title">Example</div>
+                        <button class="close-modal">&times;</button>
+                    </div>
+                    <div class="my-modal-body">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </div>
+
+                </div>
+                <div id="overlay"></div>
         {% block content %}
 
 
@@ -140,10 +154,15 @@ a{
 
 
 
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  </body>
 
 
+</body>
+
+  <script type="text/babel" src="{% static 'js/modal.js' %}"></script>
 
 </html>
