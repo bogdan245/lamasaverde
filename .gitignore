@@ -123,3 +123,4 @@ footblog/db.sqlite3
 footblog/foot_space/__pycache__/views.cpython-311.pyc
 footblog/db.sqlite3
 *.sqlite3
+*.pyc
