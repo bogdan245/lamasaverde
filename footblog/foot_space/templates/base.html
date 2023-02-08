@@ -38,8 +38,11 @@ border-bottom-right-radius:5px;
 
 }
 
-
-
+.bar{
+position:sticky;
+top:0;
+z-index:999;
+}
 
 .logo{
 position:relative;
@@ -77,10 +80,10 @@ a{
   </head>
 <body class="m-0 p-0">
 
-<div class="container">
-<nav class="navbar navbar-expand-md  ">
+<div class="container bar">
+<nav class="navbar navbar-expand-md sticky-top">
 
-    <a class="navbar-brand abs" href="{% url 'home' %}"> <img class="logo" src="/static/logov1.png"/></a>
+    <a class="navbar-brand abs" href="{% url 'home' %}"> <img class="logo" src="/static/albastru.png"/></a>
 
 
 
@@ -124,7 +127,7 @@ a{
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item about">
-                <a class="nav-link" id="openModal" href="">Despre</a>
+                <a class="nav-link" id="openModal" data-modal-target="#my-modal">Despre</a>
 
             </li>
 
@@ -135,16 +138,16 @@ a{
 </div>
 
     <div class = "container">
-        <div class="my-modal" id="modal">
+        <div class="my-modal" id="my-modal">
                     <div class="my-modal-header">
                         <div class="my-modal-title">Example</div>
-                        <button class="close-modal">&times;</button>
+                        <button data-close-button class="close-modal">&times;</button>
                     </div>
                     <div class="my-modal-body">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </div>
 
-                </div>
+        </div>
                 <div id="overlay"></div>
         {% block content %}
 
