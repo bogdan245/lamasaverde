@@ -51,7 +51,105 @@ max-height:90px;
 
 }
 
+@media screen and (min-width:1200px){
+.logo-text{
+position:absolute;
+text-align:center;
+width:13%;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+left:0;
+right:0;
+top:80px;
+margin: 0 auto;
+z-index:99;
+background-color:#41b3a3;
+color:white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+}
 
+
+@media screen and (min-width:1000px) and (max-width: 1200px){
+.logo-text{
+position:absolute;
+text-align:center;
+width:15%;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+left:0;
+right:0;
+top:80px;
+margin: 0 auto;
+z-index:99;
+background-color:#41b3a3;
+color:white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+}
+
+@media screen and (min-width:800px) and (max-width: 1000px){
+.logo-text{
+position:absolute;
+text-align:center;
+width:20%;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+left:0;
+right:0;
+top:80px;
+margin: 0 auto;
+z-index:99;
+background-color:#41b3a3;
+color:white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+}
+
+@media screen and (min-width:770px) and (max-width: 800px){
+.logo-text{
+position:absolute;
+text-align:center;
+width:25%;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+left:0;
+right:0;
+top:80px;
+margin: 0 auto;
+z-index:99;
+background-color:#41b3a3;
+color:white;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+}
+
+
+@media screen and (max-width:769px){
+.logo-text{
+position:absolute;
+text-align:center;
+left:0;
+right:0;
+margin: 0 auto;
+z-index:99;
+color:white;
+border: 1px solid white;
+border-radius:5px;
+width:30%;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+font-weight: 500;
+font-family: 'Montserrat', sans-serif;
+}
+}
 
 {% load static %}
 
@@ -84,6 +182,7 @@ a{
 <nav class="navbar navbar-expand-md sticky-top">
 
     <a class="navbar-brand abs" href="{% url 'home' %}"> <img class="logo" src="/static/albastru.png"/></a>
+    <div class="nav-item logo-text"><a href="{% url 'home' %}">LA MASA VERDE</a></div>
 
 
 
