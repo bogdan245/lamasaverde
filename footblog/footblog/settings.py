@@ -22,7 +22,7 @@ mimetypes.add_type("text/css", ".css", True)
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%(_hif+x0=uu3(+8#t3$zsalm(=(bd1y6=syatbjcueb70&=)1'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
